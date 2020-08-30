@@ -1,0 +1,46 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+
+<div class="question-container"> 
+
+    <ul>  
+        <li> {{question.author}} | {{ question.date }}</li>
+        <li>        
+          <h1> {{question.title}} </h1>  
+        </li> 
+        <li>        
+            {{question.detail}}
+        </li>  
+        
+        {% for detail in details %}  
+        <li>  
+            <div class="solution"> 
+               <h5> {{detail.author}} </h5> 
+               <p> {{detail.date}}</p> 
+               
+               <p class="paragraph"> {{detail.solution}} </p>   
+               
+            </div>   
+                     
+        </li>   
+
+        {% endfor %} 
+        
+        {% if user.is_authenticated %}
+
+            <form action="{% url 'questions:questiondetail' qids=question.id %} " method="POST" class="detail-form">
+                {% csrf_token %}                
+                {{form}}                
+                <input type="hidden" value="{{question.id}}" name="{{question.id}}">
+                <input type="submit" value="Post">   
+                
+            </form>        
+        
+    </ul>
+    {% else %}
+        <h3> You need to <a href="{% url 'accounts:login' %}"> login </a>  or <a href="{% url 'accounts:signup' %}"> sign up</a>  to comment this question </h3> 
+    {% endif %}
+</div>
+
+{% endblock %}

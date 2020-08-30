@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+*{
+    padding:0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif
+}
+
+nav{
+    background-color: #f6f7fa;
+    height: 80px;
+}
+
+label.logo {
+    color: #6f828f;
+    font-size: 35px;
+    line-height: 35px;
+    margin: 0 5px;
+    padding: 100px;
+    line-height: 70px;
+    font-weight:bold;    
+}
+
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+.checkbtn{
+    font-size: 30px;
+    color: black;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+  }
+  #check{
+    display: none;
+  }
+
+nav ul li form button{
+    background-color: white;
+    border-style: none;
+    width: auto;
+    height: auto;
+    padding: 5px;
+    margin: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+nav ul li a{
+    color: #6f828f;
+    font-size: 17px;
+    text-transform: uppercase;
+}
+
+.question-container{
+    margin: 15px;
+    width: 70%;
+    height: auto;    
+}
+
+.question-container ul li{
+    background-color: #f0f3f6;    
+}
+
+.question-container ul{
+    margin: 30px 0px 10px 10%;    
+}
+
+.question-container ul li h1{
+    font-size: 30px;
+    color: black;
+}
+
+.question-container ul p{
+    font-size: 15px;
+    font-style: normal;
+}
+
+.question-container .askby{
+    display: block;
+    float: left;
+}
+.question-container ul li .solution{
+    margin-top: 20px;   
+    font-size: 20px;
+}
+
+.question-container ul li .solution h5,p{    
+    padding-left: 5px;
+    background-color: #f0f3f6;
+}
+
+.question-container ul li .solution .paragraph{
+    font-size: 18px;
+    padding: 10px 0px 10px 5px;
+    background-color: #dfe3e6;
+}
+
+.detail-form{
+    margin-top: 5%;
+    display: block;
+}
+
+.detail-form textarea{
+    width: 100%;
+    resize: none;    
+    margin: 20px 0 0px 0;
+    padding: 10px;
+}
+
+.detail-form input{ 
+    float: right; 
+    display: block;
+    margin: 20px 0 0px 0;
+    padding: 10px;
+}
+
+.detail-form label{
+    font-size: 15px;
+}
+
+.ask-question-form{
+    margin-top: 2%;
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ask-question-form input[type="text"],input[type="password"]{
+    width: 100%;
+    resize: none;    
+    margin: 20px 0 0px 0;
+    padding: 10px;
+}
+
+.ask-question-form textarea{
+    width: 100%;
+    resize: none;    
+    margin: 20px 0 0px 0;
+    padding: 10px;
+}
+
+.ask-question-form input[type="submit"]{
+    float: right;  
+    margin-top: 10px;
+    padding:10px 10px 10px 10px;
+    font-size: 15px;  
+}
+
+.need-login{
+    margin-top: 50px;
+}
+
+@media (max-width: 858px){
+
+    .question-container{
+        margin: 15px;
+        width: 90%;
+        height: auto;    
+    }
+
+    .checkbtn{
+        display: block;
+      }
+
+      .check-ul{
+        position: fixed;
+        width: 100%;
+        height: 50%;
+        background: #dfe3e6;
+        top: 80px;      
+        left: -100%; 
+        text-align: center;
+        transition: all .5s;
+      }
+
+      nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+      }
+
+      #check:checked ~ ul{
+        left: 0;
+      }
+
+}

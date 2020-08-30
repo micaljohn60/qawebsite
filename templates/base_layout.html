@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <title>Q&A by HanIndustries</title>
+</head>
+<body>
+
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
+    <a href="{% url 'questions:questionlistis' %}" >
+        <label for="" class="logo">
+         Q&A.net     
+        </label>
+    </a>
+        <ul class="check-ul">
+            {% if user.is_authenticated %}
+
+            <li>
+                {{user}} 
+            </li>
+            
+            <li>
+                <a href="{% url 'questions:askquestion' %}">Ask Question</a>
+            </li>
+
+            <li>
+                <form action="{% url 'accounts:logout' %}" method="POST">
+                    {% csrf_token %}
+                    <button type="submit">Log out</button>               
+                </form>
+            </li>
+            
+            {%else %}
+            <li>
+                <a href="{% url 'accounts:login' %}">Log In</a>
+            </li>
+
+            <li>
+                <a href="{% url 'accounts:signup' %}">Sign Up</a>
+            </li>
+            {% endif %}
+            
+        </ul>
+    </nav>
+    
+    {% block content %}
+
+    {% endblock %}
+    <script src="{% static 'jquery.js' %}"></script>
+    <script src="{% static 'style.js' %}"></script>
+</body>
+</html>
